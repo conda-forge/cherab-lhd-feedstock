@@ -15,8 +15,7 @@ build:
     - win
     - match(python, ">3.12")
     - match(python, "<3.10")
-  script: python -m pip install --no-deps --no-build-isolation .
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -28,7 +27,6 @@ requirements:
         - python
         - cross-python_${{ target_platform }}
         - pkg-config
-        - meson-python
         - cython
         - numpy
         - cherab
@@ -37,6 +35,7 @@ requirements:
             - llvm-openmp
   host:
     - python
+    - python-build
     - pip
     - pkg-config
     - meson-python
